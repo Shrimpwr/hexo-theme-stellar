@@ -250,7 +250,7 @@ plugins:
     js: https://unpkg.com/swiper@6/swiper-bundle.min.js
 
 style:
-  darkmode: auto # auto / always / false
+  darkmode: always # auto / always / false
   theme:
     light: '#f8f8f8'
     dark: '#313438'
