@@ -27,7 +27,8 @@ $dark-code = #ff7043
 $dark-card = lighten(saturate($dark-site-bg, 50%), 10)
 
 // 移动端深色背景（OLED调成纯黑可以省电）
-$dark-site-bg-mobile = black
+// $dark-site-bg-mobile = black
+$dark-site-bg-mobile = convert(hexo-config('style.theme.dark'))
 
 
 // @font-face
