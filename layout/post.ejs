@@ -20,6 +20,9 @@ function layoutTitle() {
 <%- layoutTitle() %>
 <%- post.content %>
 <%- partial('_partial/main/article/article_footer') %>
+<% if (page.mathjax == true){ %>
+    <%- partial('mathjax') %>
+<% } %>
 </article>
 <%- partial('_partial/main/article/read_next') %>
 <%- partial('_partial/main/article/related_posts') %>
