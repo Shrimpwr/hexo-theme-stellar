@@ -5,19 +5,22 @@ if (page.menu_id == undefined) {
 if (page.header == undefined) {
   page.header = false;
 }
-function layoutTitle() {
+function layoutTitle(post) {
   const title = page.h1 || page.title;
+  var el = '';
   if (title && title.length > 0) {
-    return '<h1 class="article-title"><span>' + title + '</span></h1>';
-  } else {
-    return '';
+    el += '<h1 class="article-title"><span>' + title + '</span></h1>';
   }
+  if (post.excerpt) {
+    el += '<p class="post-excerpt">' + post.excerpt + '</p>';
+  }
+  return el;
 }
 %>
 <% let post = page; %>
 <%- partial('_partial/main/navbar/breadcrumb') %>
 <article class='content md <%- post.layout %><%- post.indent ? ' indent' : '' %><%- scrollreveal() %>'>
-<%- layoutTitle() %>
+<%- layoutTitle(post) %>
 <%- post.content %>
 <%- partial('_partial/main/article/article_footer') %>
 <% if (page.mathjax == true){ %>
