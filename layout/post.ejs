@@ -16,10 +16,14 @@ function layoutTitle(post) {
   }
   return el;
 }
+let post = page;
+let heti = '';
+if (theme.plugins.heti && theme.plugins.heti.enable) {
+  heti = ' heti';
+}
 %>
-<% let post = page; %>
 <%- partial('_partial/main/navbar/breadcrumb') %>
-<article class='content md <%- post.layout %><%- post.indent ? ' indent' : '' %><%- scrollreveal() %>'>
+<article class='content<%- heti %> md <%- post.layout %><%- post.indent ? ' indent' : '' %><%- scrollreveal() %>'>
 <%- layoutTitle(post) %>
 <%- post.content %>
 <%- partial('_partial/main/article/article_footer') %>
